@@ -3,9 +3,6 @@ import {getTableData} from '../back-end-functions/retrieveData.js'
 import ListItem from './listItem'
 import { useEffect,useState } from 'react';
 
-
-
-
 export default function ProjectList(prop){
     
     const [projects,setProjects] = useState(null)
@@ -14,7 +11,6 @@ export default function ProjectList(prop){
         const elements = []
         getTableData('projects').then(res=>{
             res.forEach(item=>{
-
                 console.log(item)
                 elements.push(<ListItem projectName={item.name} project_id={item.id}/>)
             })    
