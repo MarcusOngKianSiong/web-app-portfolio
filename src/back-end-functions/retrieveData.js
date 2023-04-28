@@ -1,23 +1,26 @@
 import {source} from './universalSettings.js'
 
 export function getTableData(tableName){
-    return new Promise((resolve,reject)=>{
-        resolve([{
-            'id': 1,
-            'name': 'portfolio website',
-            'path': ''
-        },{
-            'id': 2,
-            'name': 'display database content',
-            'path': ''
-        }])
+    // return new Promise((resolve,reject)=>{
+    //     resolve([{
+    //         'id': 1,
+    //         'name': 'portfolio website',
+    //         'path': ''
+    //     },{
+    //         'id': 2,
+    //         'name': 'display database content',
+    //         'path': ''
+    //     }])
+    // })
+    return fetch(source+`/retrieveData/getAllTableContents?tableName=${tableName}`).then(res=>{
+        return res.json()
     })
-    // fetch(source+`/getTableData?tableName=${tableName}`).then(res=>{
-    //     return res.json()
-    // })
-    // .then(res=>{
-    //     return res
-    // })
+    .then(res=>{
+        return res
+    })
+    .catch(err=>{
+        throw new Error("get table data: ",err.message)
+    })
 }
 
 export function getDocumentation(project_id){

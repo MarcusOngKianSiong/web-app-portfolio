@@ -14,13 +14,20 @@ export default function ProjectList(prop){
         const elements = []
         getTableData('projects').then(res=>{
             res.forEach(item=>{
-                elements.push(<ListItem projectName={item.name}/>)
+
+                console.log(item)
+                elements.push(<ListItem projectName={item.name} project_id={item.id}/>)
             })    
+            setProjects(elements)
         })
-        setProjects(elements)
+        
     }
 
     useEffect(()=>{
+        // getTableData('projects').then(res=>{
+        //     console.log(res)
+        // })
+        
         createComponents()
     },[])
 

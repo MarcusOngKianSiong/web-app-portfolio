@@ -11,7 +11,7 @@ export default function Subsection(prop){
             setOpen(true)
         }
     }
-
+    
     return(
         <div>
             <h5 onClick={()=>{openOrClose()}}>{prop.title}</h5>
