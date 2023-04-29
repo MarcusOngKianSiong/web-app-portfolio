@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react'
 import Image from './image'
 import Subsection from './subsection'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 export default function Section(prop){
     
     const [open,setOpen] = useState(false)
+    const [triangle,setTriangle] = useState("▶")
 
     function createSubsections(){
         const sections = []
@@ -17,15 +20,20 @@ export default function Section(prop){
     function openOrClose(){
         if(open === true){
             setOpen(false)
+            setTriangle("▶")
         }else{
             setOpen(true)
+            setTriangle("▼")
         }
     }
 
     return(
-        <div >
+        <div className=' d-flex flex-column' style={{minWidth: '50%',width: '50%'}}>
             
-            <h4 onClick={()=>{openOrClose()}}>{prop.data.title}</h4>
+                
+                <h3 onClick={()=>{openOrClose()}} className='m-3'>{triangle} {prop.data.title}</h3>
+            
+            
                 {open && 
                     <Image link={prop.data.image}/>
                 }

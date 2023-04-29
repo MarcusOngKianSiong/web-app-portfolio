@@ -6,7 +6,7 @@ import { useEffect,useState } from 'react';
 export default function ProjectList(prop){
     
     const [projects,setProjects] = useState(null)
-
+    
     const createComponents = () => {
         const elements = []
         getTableData('projects').then(res=>{
