@@ -15,7 +15,7 @@ const router = createBrowserRouter([
       element: <App/>,
     },
     {
-      path: "/web-app-portfolio/documentation",
+      path: "/*/documentation",
       element: <Documentation/>
     }
 ]);

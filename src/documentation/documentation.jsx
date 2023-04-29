@@ -1,11 +1,13 @@
 import Section from './section'
 import {getDocumentation} from '../back-end-functions/retrieveData.js'
 import { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { baseUrl } from '../tools/globalSettings/globalSettings';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Documentation(prop){
+
+    const navigate = useNavigate()
     const location = useLocation()
     console.log(location)
     const something = new URLSearchParams(location.search)
@@ -15,6 +17,12 @@ export default function Documentation(prop){
     
     // const [documentationData,setDocumentationData] = useState(null)
     const [sections, setSections] = useState([])
+
+    const backToProjectListPage = () => {
+        navigate({
+            pathname: '/',
+        })
+    }
 
     const createSections = (data) => {
         const sections = []
@@ -41,7 +49,8 @@ export default function Documentation(prop){
     return(
         <div className=' m-2 d-flex flex-column align-items-center'>
             <h2 className='m-5'>Documentation: {query.title}</h2>
-            <a href={`${baseUrl}/`} className='m-1'>Back to projects list</a>
+            <div onClick={()=>{backToProjectListPage()}}>Back to projects list</div>
+            {/* <a href={`${baseUrl}/`} className='m-1'>Back to projects list</a> */}
             {sections}
         </div>
     )
