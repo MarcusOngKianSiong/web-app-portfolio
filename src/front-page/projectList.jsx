@@ -10,11 +10,16 @@ export default function ProjectList(prop){
     const createComponents = () => {
         const elements = []
         getTableData('projects').then(res=>{
-            res.forEach(item=>{
-                console.log(item)
-                elements.push(<ListItem projectName={item.name} project_id={item.id}/>)
-            })    
-            setProjects(elements)
+            getTableData('web_application_directory').then(directories=>{
+                console.log("CHECKING DIRECTORIES: ",directories)
+                res.forEach(item=>{
+                    console.log(item)
+                    const relatedProject = directories.find(director=>director.project_id === item.id)
+                    elements.push(<ListItem projectName={item.name} project_id={item.id} route={relatedProject} />)
+                })
+                setProjects(elements)
+            })
+            
         })
         
     }

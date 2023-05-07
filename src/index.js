@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import Documentation from './documentation/documentation';
+import Chat_App from './projects/project_chat_app/chat_app'
 import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
@@ -17,16 +18,20 @@ const router = createBrowserRouter([
     {
       path: "/*/documentation",
       element: <Documentation/>
+    },{
+      path: "/*/chatapp",
+      element: <Chat_App/>
     }
 ]);
 
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  
     <RouterProvider router={router}/>
-    {/* // <App /> */}
-  </React.StrictMode>
+    
+  
 );
 
 // If you want to start measuring performance in your app, pass a function
