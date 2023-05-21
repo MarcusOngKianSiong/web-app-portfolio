@@ -9,8 +9,6 @@ const socket = io(source);
 
 export default function Chat_Area(prop){
 
-    
-
     const [numberOfChatters,setNumberOfChatters] = useState(0)
     const [something,setSomething] = useState('')
     const [chatBubbles,setChatBubbles] = useState([])
@@ -18,7 +16,7 @@ export default function Chat_Area(prop){
     const editSomething = (e) => {
         setSomething(e.target.value); 
     }
-
+    
     const displayCurrentChatLogs = (arr) => {
         console.log(arr)
         const currentChatLogs = [];
