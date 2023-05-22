@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import Documentation from './documentation/documentation';
 import Chat_App from './projects/project_chat_app/chat_app'
+import ExecutionPath from './projects/executionPathApp/executionPathApp'
 import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
@@ -21,6 +22,9 @@ const router = createBrowserRouter([
     },{
       path: "/*/chatapp",
       element: <Chat_App/>
+    },{
+      path: "/*/pathexecutionapp",
+      element: <ExecutionPath/>
     }
 ]);
 

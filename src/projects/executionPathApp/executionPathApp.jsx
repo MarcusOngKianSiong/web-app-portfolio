@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
 // import {homePage} from '../../tools/globalSettings.js'
 import { baseUrl } from '../../tools/globalSettings/globalSettings.js';
+import {source} from '../../back-end-functions/universalSettings.js'
 import Visualisation from './Visualisation/Visualisation'
 import FunctionDetails from './FunctionDetails/FunctionDetails'
 import DisplayConnectionID from './displayConnectionID/displayConnectionID'
@@ -41,7 +42,7 @@ export default function ExecutionPathApp(){
     
     useEffect(()=>{
         
-        const socket = io(baseUrl)
+        const socket = io(source)
         
         socket.emit('create execution path app instance',"something")
         socket.on('create execution path app instance',(id)=>{
@@ -55,7 +56,7 @@ export default function ExecutionPathApp(){
         })
         
     },[])
-
+    
     useEffect(()=>{
             startVisualisation(data)
     },[data])
