@@ -1,5 +1,13 @@
 import {source} from './universalSettings.js'
 
+
+
+export async function savesnapshotandgetsharablelink(formData){
+    return fetch(source+'/documentation/savesnapshotandgetsharablelink',{method: 'POST',body: formData}).then(res=>{
+                    return res.json()
+                })
+}
+
 export function getTableData(tableName){
     // return new Promise((resolve,reject)=>{
     //     resolve([{
@@ -12,13 +20,17 @@ export function getTableData(tableName){
     //         'path': ''
     //     }])
     // })
+    console.log("GETTING TABLE DATA")
     return fetch(source+`/retrieveData/getAllTableContents?tableName=${tableName}`).then(res=>{
+        console.log("Hello?")
         return res.json()
     })
     .then(res=>{
-        return res
+        console.log("GET TABLE DATA: Data obtained.");
+        return res;
     })
     .catch(err=>{
+        console.log("ERROR")
         throw new Error("get table data: ",err.message)
     })
 }

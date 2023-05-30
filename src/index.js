@@ -5,6 +5,7 @@ import App from './App';
 import Documentation from './documentation/documentation';
 import Chat_App from './projects/project_chat_app/chat_app'
 import ExecutionPath from './projects/executionPathApp/executionPathApp'
+import SnapshotToSharableLink from './projects/snapshotToSharableLink/snapshotToSharableLink';
 import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
@@ -25,6 +26,9 @@ const router = createBrowserRouter([
     },{
       path: "/*/pathexecutionapp",
       element: <ExecutionPath/>
+    },{
+      path: "/*/snapshottosharablelink",
+      element: <SnapshotToSharableLink/>
     }
 ]);
 
