@@ -38,7 +38,7 @@ export function getTableData(tableName){
 export function getDocumentation(project_id){
     
     // An array of objects, where each object represents a section, where each section has a title, image, subsections. Sub sections is an array of objects where each object has a title and a content. 
-    return fetch('http://localhost:3001'+`/retrieveData/getMarkDownDocumentation?project_id=${project_id}`).then(res=>{
+    return fetch(source+`/retrieveData/getMarkDownDocumentation?project_id=${project_id}`).then(res=>{
         return res.json()
     })
     .then(res=>{
