@@ -21,11 +21,9 @@ export default function ProjectList(prop){
                 })
                 setProjects(elements)
             })
-            
         }).catch(err=>{
             console.log("ERROR: ",err)
         })
-        
     }
 
     useEffect(()=>{

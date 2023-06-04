@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import Documentation from './documentation/documentation';
+import MarkdownDocumentation from './documentation/markdownDocumentation';
 import Chat_App from './projects/project_chat_app/chat_app'
 import ExecutionPath from './projects/executionPathApp/executionPathApp'
 import SnapshotToSharableLink from './projects/snapshotToSharableLink/snapshotToSharableLink';
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
     },
     {
       path: "/*/documentation",
-      element: <Documentation/>
+      element: <MarkdownDocumentation/>
     },{
       path: "/*/chatapp",
       element: <Chat_App/>
