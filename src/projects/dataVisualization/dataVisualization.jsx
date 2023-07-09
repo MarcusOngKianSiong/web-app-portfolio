@@ -3,7 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect,useState } from 'react';
 import { io } from 'socket.io-client';
 import Button from 'react-bootstrap/Button';
+import { source } from '../../back-end-functions/universalSettings.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 // Personal
 import {findMaxAndMin,extractArrayFromNestedArraysAndObjects,concatenateArraysWithinArrayOfObjects} from '../../tools/arrayManipulation/arrayManipulation.js'
@@ -60,8 +62,8 @@ export default function DataVisualization(){
     
 
     useEffect(()=>{
-
-        const socket = io("http://localhost:3001");
+        
+        const socket = io(source);
         socket.on("visualize data",(data)=>{
           // Change Y axis range to fit the data nicely in the chart
           const minAndMax = changeChartOptions(data)
