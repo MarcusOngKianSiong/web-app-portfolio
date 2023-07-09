@@ -41,6 +41,9 @@ const router = createBrowserRouter([
       path: "/",
       element: <Navigate to="/web-app-portfolio"/>
       // Component: Takes a function call
+    },{
+      path: "/*",
+      element: <Navigate to="/web-app-portfolio"/>
     }
     
 ]);
