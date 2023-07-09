@@ -30,7 +30,7 @@ export default function ExecutionPathApp(){
     // }
 
     const backToHomePage = () => {
-        navigate('/*')
+        navigate('/')
     }
     
     // Open up the visualisation once you press the next button

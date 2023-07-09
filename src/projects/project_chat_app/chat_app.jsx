@@ -10,7 +10,7 @@ export default function Chat_App(){
     const navigate = useNavigate()
 
     const backToHomePage = () => {
-        navigate("/*")
+        navigate("/")
     }
 
     const finishedSettingName = (name) => {

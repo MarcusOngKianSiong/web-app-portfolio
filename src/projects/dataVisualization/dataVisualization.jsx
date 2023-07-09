@@ -18,7 +18,7 @@ export default function DataVisualization(){
     const navigate = useNavigate()
 
     const backToHomePage = () => {
-        navigate('/*')
+        navigate('/')
     }
 
     function changeChartOptions(obj){

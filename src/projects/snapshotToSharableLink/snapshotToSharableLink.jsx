@@ -17,7 +17,7 @@ export default function SnapshotToSharableLink(){
         const copyRef = useRef(null);
 
         const backToHomePage = () => {
-            navigate('/*')
+            navigate('/')
         }
 
         const editName = (e) => {
