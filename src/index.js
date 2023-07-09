@@ -7,30 +7,42 @@ import MarkdownDocumentation from './documentation/markdownDocumentation';
 import Chat_App from './projects/project_chat_app/chat_app'
 import ExecutionPath from './projects/executionPathApp/executionPathApp'
 import SnapshotToSharableLink from './projects/snapshotToSharableLink/snapshotToSharableLink';
+import DataVisualization from './projects/dataVisualization/dataVisualization';
+
 import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
   RouterProvider,
+  Navigate 
 } from "react-router-dom";
+import { Nav } from 'react-bootstrap';
 
 const router = createBrowserRouter([
     {
-      path: "/*",
+      path: "/web-app-portfolio",
       element: <App/>,
     },
     {
-      path: "/*/documentation",
+      path: "/web-app-portfolio/documentation",
       element: <MarkdownDocumentation/>
     },{
-      path: "/*/chatapp",
+      path: "/web-app-portfolio/chatapp",
       element: <Chat_App/>
     },{
-      path: "/*/pathexecutionapp",
+      path: "/web-app-portfolio/pathexecutionapp",
       element: <ExecutionPath/>
     },{
-      path: "/*/snapshottosharablelink",
+      path: "/web-app-portfolio/snapshottosharablelink",
       element: <SnapshotToSharableLink/>
+    },{
+      path: "/web-app-portfolio/datavisualization",
+      element: <DataVisualization />
+    },{
+      path: "/",
+      element: <Navigate to="/web-app-portfolio"/>
+      // Component: Takes a function call
     }
+    
 ]);
 
 
