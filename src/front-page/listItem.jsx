@@ -9,7 +9,7 @@ export default function ListItem(prop){
     
     const goToDocumentationPage = () => {
         navigate({
-            pathname: '/*/documentation',
+            pathname: '/web-app-portfolio/documentation',
             search: `?projectID=${prop.project_id}&title=${prop.projectName}`
         })
     }
