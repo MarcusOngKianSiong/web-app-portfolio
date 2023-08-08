@@ -3,7 +3,7 @@ import {source} from './universalSettings.js'
 
 
 export async function savesnapshotandgetsharablelink(formData){
-    return fetch('http://localhost:3001'+'/documentation/savesnapshotandgetsharablelink',{method: 'POST',body: formData}).then(res=>{
+    return fetch('source'+'/documentation/savesnapshotandgetsharablelink',{method: 'POST',body: formData}).then(res=>{
                     return res.json()
                 })
 }
