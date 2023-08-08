@@ -3,42 +3,30 @@ import DisplayScreenShot from './displayScreenshot.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const findImageAsFile = (clipboardItems)=>{
-    
     const returnData = {
         imageFile: null,
         fileFormat: null
     }
-
     for (let i = 0; i < clipboardItems.length; i++) {               // Loop through the clipboard items
         const item = clipboardItems[i];
-        
         if (item.type.indexOf('image') !== -1) {                    // Find the image within the array of clipboard items
             console.log("ITEM FOUND: ",item);
-            
-            const blob = item.getAsFile();                          // Turn the clipboard item (image) into a file
-            
+            const blob = item.getAsFile();                          // Turn the clipboard item (image) into a file and store it in local memory
             const fileFormat = blob.type.split('/');                // Get the file type
-            
-            // Set the return object items (image file, file type)
             returnData.imageFile = blob;
             returnData.fileFormat = fileFormat[1];
-
-            // return the object item
             return returnData;
         }
     }
     throw new Error("No image file found.")
-    
 }
 
 
 export default function PasteAndDisplayScreenShot(prop){
-
     const canvasRef = useRef(null);
     const [fileDataAndFileExtension,setFileDataAndFileExtension] = useState(null)
     const [fileName, setFileName] = useState(null);
     const [errorMessage,setErrorMessage] = useState(null)
-
     const handlePaste = (e) => {
         console.log("Hello there");
         try {
@@ -51,7 +39,6 @@ export default function PasteAndDisplayScreenShot(prop){
             }
         }
     }
-    
     const storeScreenshot = () => {
         if(fileName !== null){
             const reader = new FileReader()
@@ -86,7 +73,6 @@ export default function PasteAndDisplayScreenShot(prop){
     
     return (
         <div className='d-flex flex-column w-100 align-items-center'>
-            
             <div onPaste={(e)=>{handlePaste(e)}} className="" style={{ height: '75%',boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)'}}>
                 <DisplayScreenShot fileDataAndFileExtension={fileDataAndFileExtension}/>
             </div>

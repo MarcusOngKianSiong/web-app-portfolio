@@ -22,6 +22,8 @@ export default function MarkdownDocumentation(prop){
         })
     }
 
+        
+
     const renderers = {
         image: (src,alt)=>{
             console.log("Hello")
@@ -32,7 +34,9 @@ export default function MarkdownDocumentation(prop){
     
     useEffect(()=>{
             getDocumentation(query.projectID).then(res=>{
+                // ----testarea reflection---
                 const elements = <ReactMarkdown>{res.documentation}</ReactMarkdown>
+                // ------
                 console.log("This: ",res.documentation);
                 setDocument(elements);
             })

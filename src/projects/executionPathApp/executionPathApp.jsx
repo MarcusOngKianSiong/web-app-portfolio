@@ -28,7 +28,7 @@ export default function ExecutionPathApp(){
             }]
         */
     // }
-
+    
     const backToHomePage = () => {
         navigate('/')
     }

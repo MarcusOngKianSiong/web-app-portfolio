@@ -2,9 +2,7 @@ import { useEffect } from "react"
 import { useState } from "react"
 
 export default function DisplayScreenShot(prop){
-    
     const [URL,setURL] = useState(null)
-    
     useEffect(()=>{
         if(prop.fileDataAndFileExtension !== null){
             console.log(prop.fileDataAndFileExtension)
@@ -14,13 +12,10 @@ export default function DisplayScreenShot(prop){
             }
             reader.readAsDataURL(prop.fileDataAndFileExtension.imageFile);
         }
-        
     },[prop])
-
     return (
         <div>
             <img src={URL}/>
         </div>
     )
-    
 }
